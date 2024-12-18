@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvCard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    app:cardCornerRadius="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/fondo_cartas">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="250dp"
+            android:layout_marginEnd="250dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/imgCoste"
+                android:layout_width="70dp"
+                android:layout_height="75dp"
+                android:backgroundTint="@color/buttons_menu"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:textAlignment="center"
+                android:textColor="@color/colorDescripcion"
+                android:textSize="20sp"
+                app:cornerRadius="100dp" />
+
+            <TextView
+                android:id="@+id/lblNombre"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textColor="@color/colorDescripcion"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgFoto"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="250dp"
+            android:layout_marginEnd="250dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toTopOf="@+id/lblDescripcion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            tools:srcCompat="@drawable/ataque1" />
+
+        <TextView
+            android:id="@+id/lblDescripcion"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="250dp"
+            android:layout_marginEnd="250dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="@color/colorDescripcion"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

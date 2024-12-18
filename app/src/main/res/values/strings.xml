@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">aplicacion_inventada</string>
+    <string name="lbl_splash">JAH GAMES</string>
+    <string name="btn_jugar">Jugar</string>
+    <string name="btn_cartas">Cartas</string>
+    <string name="title_menu">Roguelite de cartas</string>
+
+    <string name="dialog_title">Salir de la aplicación</string>
+    <string name="dialog_message">¿Quieres salir de la aplicación?</string>
+    <string name="dialog_positive">Si</string>
+    <string name="dialog_negative">No</string>
+</resources>
