@@ -6,73 +6,69 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    app:cardCornerRadius="0dp">
+    app:cardCornerRadius="0dp"
+    app:strokeColor="@color/letras_color"
+    app:strokeWidth="15dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/fondo_cartas">
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
+        <Button
+            android:id="@+id/imgCoste"
+            android:layout_width="75dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/menu_color"
+            android:text="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lblNombre"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="250dp"
-            android:layout_marginEnd="250dp"
-            android:orientation="horizontal"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="100dp"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="@color/letras_color"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/imgFoto"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <Button
-                android:id="@+id/imgCoste"
-                android:layout_width="70dp"
-                android:layout_height="75dp"
-                android:backgroundTint="@color/buttons_menu"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:textAlignment="center"
-                android:textColor="@color/colorDescripcion"
-                android:textSize="20sp"
-                app:cornerRadius="100dp" />
-
-            <TextView
-                android:id="@+id/lblNombre"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:text="TextView"
-                android:textAlignment="center"
-                android:textColor="@color/colorDescripcion"
-                android:textSize="16sp" />
-        </LinearLayout>
+            app:layout_constraintStart_toEndOf="@+id/imgCoste"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imgFoto"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="180dp"
             android:layout_marginStart="250dp"
-            android:layout_marginEnd="250dp"
+            android:layout_marginEnd="200dp"
             android:scaleType="fitXY"
-            app:layout_constraintBottom_toTopOf="@+id/lblDescripcion"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/imgCoste"
             tools:srcCompat="@drawable/ataque1" />
 
         <TextView
             android:id="@+id/lblDescripcion"
             android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_marginStart="250dp"
-            android:layout_marginEnd="250dp"
-            android:fontFamily="sans-serif-condensed-medium"
+            android:layout_height="0dp"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="100dp"
             android:text="TextView"
             android:textAlignment="center"
-            android:textColor="@color/colorDescripcion"
+            android:textColor="@color/letras_color"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgFoto" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

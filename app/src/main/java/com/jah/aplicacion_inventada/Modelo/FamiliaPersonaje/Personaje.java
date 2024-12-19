@@ -1,5 +1,6 @@
 package com.jah.aplicacion_inventada.Modelo.FamiliaPersonaje;
 
+import com.jah.aplicacion_inventada.Controlador.ControladorPersonaje;
 import com.jah.aplicacion_inventada.Modelo.FamiliaCarta.Carta;
 
 import java.util.List;
@@ -41,7 +42,11 @@ public class Personaje {
     }
 
     public void setVida(int vida) {
-        this.vida += vida;
+        if(this.getVida() <= this.getVidaMaxima() + vida){
+            this.vida += vida;
+        }else{
+            this.vida = this.getVidaMaxima();
+        }
     }
 
     public int getVidaMaxima() {

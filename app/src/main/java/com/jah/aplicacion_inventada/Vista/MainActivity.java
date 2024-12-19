@@ -30,8 +30,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initComponents();
         setSupportActionBar(mtbMenu);
-        btnJugar.setOnClickListener(view -> jugar());
-        btnCartas.setOnClickListener(view -> verCartas());
+        btnJugar.setOnClickListener(view -> {
+            soundPool.play(sonidoCargado, 1, 1, 0, 0, 1);
+            jugar();
+        });
+        btnCartas.setOnClickListener(view -> {
+            soundPool.play(sonidoCargado, 1, 1, 0, 0, 1);
+            verCartas();
+        });
     }
 
     @Override

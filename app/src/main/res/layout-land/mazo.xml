@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cvCarta"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/fondo_cartas">
+
+        <Button
+            android:id="@+id/imgCosteCarta"
+            android:layout_width="75dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/menu_color"
+            android:text="Button"
+            android:textAlignment="center"
+            android:textColor="@color/letras_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lblNombreCarta"
+            android:layout_width="87dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="44dp"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="@color/letras_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgCosteCarta" />
+
+        <ImageView
+            android:id="@+id/imgFotoCarta"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="40dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/lblDescripcionCarta"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/lblNombreCarta"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ataque1" />
+
+        <TextView
+            android:id="@+id/lblDescripcionCarta"
+            android:layout_width="175dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="52dp"
+            android:layout_marginBottom="40dp"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="@color/letras_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.498" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

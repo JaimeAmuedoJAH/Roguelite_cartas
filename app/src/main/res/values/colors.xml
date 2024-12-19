@@ -2,7 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="letras_color">#DBB322</color>
+    <color name="letras_color">#5670F2</color>
     <color name="menu_color">#23D0DAE7</color>
     <color name="buttons_menu">#00D0DAE7</color>
     <color name="colorDescripcion">#FFFFFF</color>
