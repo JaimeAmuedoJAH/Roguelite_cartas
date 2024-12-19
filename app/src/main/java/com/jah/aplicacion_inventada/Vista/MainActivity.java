@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void jugar() {
-        Intent jugar = new Intent(getApplicationContext(), ActivityJugar.class);
+        Intent jugar = new Intent(getApplicationContext(), ActivityPrimeraPantalla.class);
         startActivity(jugar);
         mediaPlayer.stop();
         mediaPlayer.release();

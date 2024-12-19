@@ -3,10 +3,20 @@
     <string name="lbl_splash">JAH GAMES</string>
     <string name="btn_jugar">Jugar</string>
     <string name="btn_cartas">Cartas</string>
+    <string name="btn_finalizar_turno">Finalizar turno</string>
     <string name="title_menu">Roguelite de cartas</string>
+    <string name="dialogo_sabio">Elige una recompensa para empezar tu travesía</string>
+
+    <string name="eleccion1">Empiezas con 7 puntos de vida extra</string>
+    <string name="eleccion2">Empiezas con 1 punto de ataque extra</string>
+    <string name="eleccion3">Empiezas con 1 punto de defensa extra</string>
 
     <string name="dialog_title">Salir de la aplicación</string>
     <string name="dialog_message">¿Quieres salir de la aplicación?</string>
     <string name="dialog_positive">Si</string>
     <string name="dialog_negative">No</string>
+
+    <string name="dialog_victoria_title">VICTORIA</string>
+    <string name="dialog_victoria_message">Has derrotado al enemigo</string>
+    <string name="dialog_victoria_positive">Continuar</string>
 </resources>

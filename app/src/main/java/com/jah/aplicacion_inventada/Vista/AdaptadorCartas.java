@@ -48,7 +48,7 @@ public class AdaptadorCartas extends RecyclerView.Adapter<AdaptadorCartas.Holder
         return dataset.size();
     }
 
-    public class HolderCartas extends RecyclerView.ViewHolder {
+    public static class HolderCartas extends RecyclerView.ViewHolder {
 
         Button imgCoste;
         ImageView imgFoto;

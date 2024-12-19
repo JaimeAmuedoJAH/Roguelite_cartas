@@ -29,6 +29,7 @@
         android:backgroundTint="@color/buttons_menu"
         android:text="@string/btn_jugar"
         android:textColor="@color/letras_color"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mtbMenu" />
@@ -41,6 +42,7 @@
         android:backgroundTint="@color/buttons_menu"
         android:text="@string/btn_cartas"
         android:textColor="@color/letras_color"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnJugar" />

@@ -36,7 +36,10 @@ public class ActivityVerCartas extends AppCompatActivity {
         listCartas = new ArrayList<>();
         listCartas.add(new Carta("Ataque", "Realiza un barrido con la espada inflingiendo daño físico al enemigo", 1, R.drawable.ataque1));
         listCartas.add(new Carta("Ataque+", "Realiza una estocada con la espada inflingiendo mayor cantidad de daño físico al enemigo que con un Ataque", 2, R.drawable.ataque2));
+        listCartas.add(new Carta("Ataque en área", "Realiza una serie de golpes consecutivos haciendo daño a todos los enemigos en la sala", 2, R.drawable.ataque3));
         listCartas.add(new Carta("Defensa", "Pone el escudo enfrente para bloquear el ataque del enemigo(Si el enemigo realiza un ataque+, seguirás recibiendo algo de daño)", 1, R.drawable.defensa1));
         listCartas.add(new Carta("Defensa+", "Alza el escudo bloqueando todo el daño recibido. No hay bloqueo más potente", 2, R.drawable.defensa2));
+        listCartas.add(new Carta("Dame fuerza", "Aumenta tu ataque en 1 punto, realizando mas daño a los enemigos", 1, R.drawable.habilidadataque));
+        listCartas.add(new Carta("Baluarte", "Aumenta tu defensa en 1 punto siendo más resistente a los ataques", 1, R.drawable.habilidaddefensa));
     }
 }

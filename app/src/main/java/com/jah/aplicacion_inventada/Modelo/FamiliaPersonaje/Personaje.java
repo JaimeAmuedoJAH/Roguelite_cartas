@@ -12,16 +12,20 @@ public class Personaje {
     int ataque;
     int defensa;
     List<Carta> mazo;
+    int turnosTotales;
+    int turnos;
 
     public Personaje(){}
 
-    public Personaje(String nombre, int vida, int vidaMaxima, int ataque, int defensa, List<Carta> mazo) {
+    public Personaje(String nombre, int vida, int vidaMaxima, int ataque, int defensa, List<Carta> mazo, int turnosTotales, int turnos) {
         this.nombre = nombre;
         this.vida = vida;
         this.vidaMaxima = vidaMaxima;
         this.ataque = ataque;
         this.defensa = defensa;
         this.mazo = mazo;
+        this.turnosTotales = turnosTotales;
+        this.turnos = turnos;
     }
 
     public String getNombre() {
@@ -37,7 +41,7 @@ public class Personaje {
     }
 
     public void setVida(int vida) {
-        this.vida = vida;
+        this.vida += vida;
     }
 
     public int getVidaMaxima() {
@@ -53,7 +57,7 @@ public class Personaje {
     }
 
     public void setAtaque(int ataque) {
-        this.ataque = ataque;
+        this.ataque += ataque;
     }
 
     public int getDefensa() {
@@ -61,7 +65,7 @@ public class Personaje {
     }
 
     public void setDefensa(int defensa) {
-        this.defensa = defensa;
+        this.defensa += defensa;
     }
 
     public List<Carta> getMazo() {
@@ -70,6 +74,22 @@ public class Personaje {
 
     public void setMazo(List<Carta> mazo) {
         this.mazo = mazo;
+    }
+
+    public int getTurnosTotales() {
+        return turnosTotales;
+    }
+
+    public void setTurnosTotales(int turnosTotales) {
+        this.turnosTotales = turnosTotales;
+    }
+
+    public int getTurnos() {
+        return turnos;
+    }
+
+    public void setTurnos(int turnos) {
+        this.turnos = turnos;
     }
 
     @Override
@@ -81,6 +101,8 @@ public class Personaje {
                 ", ataque=" + ataque +
                 ", defensa=" + defensa +
                 ", mazo=" + mazo +
+                ", turnosTotales=" + turnosTotales +
+                ", turnos=" + turnos +
                 '}';
     }
 }
