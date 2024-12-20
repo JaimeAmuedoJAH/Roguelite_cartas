@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.jah.aplicacion_inventada.Controlador.ControladorEnemigo;
 import com.jah.aplicacion_inventada.Controlador.ControladorPersonaje;
 import com.jah.aplicacion_inventada.Modelo.FamiliaCarta.Ataque;
 import com.jah.aplicacion_inventada.Modelo.FamiliaCarta.Carta;
@@ -67,6 +68,7 @@ public class ActivityPrimeraPantalla extends AppCompatActivity {
         btnEleccion3 = findViewById(R.id.btnEleccion3);
         ControladorPersonaje.mazoInicial();
         ControladorPersonaje.personajeInicial();
+        ControladorEnemigo.enemigo1();
         mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.musicajugando);
         mediaPlayer.setLooping(true);
         mediaPlayer.start();

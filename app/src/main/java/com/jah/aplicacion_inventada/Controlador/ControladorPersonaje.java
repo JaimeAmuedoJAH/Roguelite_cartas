@@ -1,10 +1,17 @@
 package com.jah.aplicacion_inventada.Controlador;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+
 import com.jah.aplicacion_inventada.Modelo.FamiliaCarta.Ataque;
 import com.jah.aplicacion_inventada.Modelo.FamiliaCarta.Carta;
 import com.jah.aplicacion_inventada.Modelo.FamiliaCarta.Defensa;
+import com.jah.aplicacion_inventada.Modelo.FamiliaPersonaje.Enemigo;
 import com.jah.aplicacion_inventada.Modelo.FamiliaPersonaje.Personaje;
 import com.jah.aplicacion_inventada.R;
+import com.jah.aplicacion_inventada.Vista.ActivitySegundaPelea;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -35,17 +42,28 @@ public class ControladorPersonaje implements Serializable {
         personaje.setDefensa(defensa);
     }
 
-    public static void atacar(Ataque carta, Personaje personaje, Personaje enemigo){
+    public static void atacar(Ataque carta, Personaje personaje, Enemigo enemigo, Context context){
         int ataque = carta.getAtaque() + personaje.getAtaque() - enemigo.getDefensa();
+        int danio = enemigo.getVida() - ataque;
         if(ataque > enemigo.getVida()){
-            enemigo.setVida(enemigo.getVida() * -1);
+            enemigo.setVida(0);
+            createDialogVictoria(context);
         }else{
-            enemigo.setVida(ataque * -1);
+            enemigo.setVida(danio);
         }
     }
 
-    public static void defender(Defensa carta, Personaje personaje){
-        personaje.setDefensa(carta.getDefensa());
+    private static void createDialogVictoria(Context context) {
+        new AlertDialog.Builder(context)
+                .setCancelable(false)
+                .setTitle(R.string.dialog_victoria_title)
+                .setMessage(R.string.dialog_victoria_message)
+                .setPositiveButton(R.string.dialog_victoria_positive, (dialogInterface, i) -> {
+                    Intent segundaPelea = new Intent(context, ActivitySegundaPelea.class);
+                    context.startActivity(segundaPelea);
+                })
+                .create()
+                .show();
     }
 
     public static void personajeInicial(){
