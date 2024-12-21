@@ -7,4 +7,5 @@
     <color name="buttons_menu">#00D0DAE7</color>
     <color name="colorDescripcion">#FFFFFF</color>
     <color name="colordanio">#EF2D1F</color>
+    <color name="background">#67000000</color>
 </resources>

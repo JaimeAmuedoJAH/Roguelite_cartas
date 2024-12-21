@@ -2,8 +2,8 @@ package com.jah.aplicacion_inventada.Controlador;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Handler;
 
 import com.jah.aplicacion_inventada.Modelo.FamiliaCarta.Ataque;
 import com.jah.aplicacion_inventada.Modelo.FamiliaCarta.Carta;
@@ -12,12 +12,11 @@ import com.jah.aplicacion_inventada.Modelo.FamiliaPersonaje.Enemigo;
 import com.jah.aplicacion_inventada.Modelo.FamiliaPersonaje.Personaje;
 import com.jah.aplicacion_inventada.R;
 import com.jah.aplicacion_inventada.Vista.ActivityPelea;
+import com.jah.aplicacion_inventada.Vista.ActivityPrimeraPantalla;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class ControladorPersonaje implements Serializable {
 
@@ -62,7 +61,26 @@ public class ControladorPersonaje implements Serializable {
                 .setTitle(R.string.dialog_victoria_title)
                 .setMessage(R.string.dialog_victoria_message)
                 .setPositiveButton(R.string.dialog_victoria_positive, (dialogInterface, i) -> {
+                    ActivityPelea.combate++;
+                    ActivityPelea.iniciarEnemigo();
+                    if(ActivityPelea.combate == 3){
+                        finDelJuego(context);
+                    }
+                })
+                .create()
+                .show();
+    }
 
+    private static void finDelJuego(Context context) {
+        new AlertDialog.Builder(context)
+                .setCancelable(false)
+                .setTitle("¡VICTORIA!!!!")
+                .setMessage("ENHORABUENA LOS HAS DERROTADO A TODOS!!!")
+                .setPositiveButton("Volver al menu principal", (dialogInterface, i) -> {
+                    Intent intent = new Intent(context, ActivityPrimeraPantalla.class);
+                    ActivityPelea.mediaPlayer.stop();
+                    ActivityPelea.mediaPlayer.release();
+                    context.startActivity(intent);
                 })
                 .create()
                 .show();

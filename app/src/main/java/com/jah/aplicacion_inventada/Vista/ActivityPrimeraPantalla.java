@@ -22,7 +22,7 @@ import java.util.List;
 
 public class ActivityPrimeraPantalla extends AppCompatActivity {
 
-    Button btnEleccion1, btnEleccion2, btnEleccion3;
+    Button btnEleccion1, btnEleccion2, btnEleccion3, btnVolver;
     MediaPlayer mediaPlayer;
     SoundPool soundPool;
     int sonidoCargado;
@@ -45,6 +45,14 @@ public class ActivityPrimeraPantalla extends AppCompatActivity {
             soundPool.play(sonidoCargado, 1, 1, 0, 0, 1);
             aumentarEstadistica(3);
         });
+
+        btnVolver.setOnClickListener(view -> volver());
+    }
+
+    private void volver() {
+        Intent volver = new Intent(getApplicationContext(), MainActivity.class);
+        finish();
+        startActivity(volver);
     }
 
     private void aumentarEstadistica(int seleccion) {
@@ -69,9 +77,9 @@ public class ActivityPrimeraPantalla extends AppCompatActivity {
         btnEleccion1 = findViewById(R.id.btnEleccion1);
         btnEleccion2 = findViewById(R.id.btnEleccion2);
         btnEleccion3 = findViewById(R.id.btnEleccion3);
+        btnVolver = findViewById(R.id.btnVolver);
         ControladorPersonaje.mazoInicial();
         ControladorPersonaje.personajeInicial();
-        ControladorEnemigo.enemigo1();
         mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.musicajugando);
         mediaPlayer.setLooping(true);
         mediaPlayer.start();

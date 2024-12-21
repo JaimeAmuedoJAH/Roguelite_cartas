@@ -26,10 +26,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="84dp"
-        android:backgroundTint="@color/buttons_menu"
+        android:backgroundTint="@color/background"
         android:text="@string/btn_jugar"
         android:textColor="@color/letras_color"
         android:textSize="24sp"
+        app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mtbMenu" />
@@ -39,11 +40,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:backgroundTint="@color/buttons_menu"
+        android:backgroundTint="@color/background"
         android:text="@string/btn_cartas"
         android:textColor="@color/letras_color"
         android:textSize="24sp"
+        app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnJugar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

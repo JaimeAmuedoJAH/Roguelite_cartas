@@ -8,6 +8,19 @@
     android:background="@drawable/fondo"
     tools:context=".Vista.ActivityPrimeraPantalla">
 
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="48dp"
+        android:backgroundTint="@color/background"
+        android:text="Volver"
+        android:textColor="@color/letras_color"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="124dp"
@@ -34,7 +47,8 @@
         android:layout_height="0dp"
         android:layout_marginEnd="248dp"
         android:layout_marginBottom="72dp"
-        android:backgroundTint="@color/menu_color"
+        android:background="@color/background"
+        android:backgroundTint="@color/background"
         android:text="@string/dialogo_sabio"
         android:textColor="@color/letras_color"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -47,7 +61,7 @@
         android:layout_marginStart="150dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="150dp"
-        android:backgroundTint="@color/menu_color"
+        android:backgroundTint="@color/background"
         android:text="@string/eleccion1"
         android:textColor="@color/letras_color"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +75,7 @@
         android:layout_marginStart="150dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="150dp"
-        android:backgroundTint="@color/menu_color"
+        android:backgroundTint="@color/background"
         android:text="@string/eleccion2"
         android:textColor="@color/letras_color"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,7 +89,7 @@
         android:layout_marginStart="150dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="150dp"
-        android:backgroundTint="@color/menu_color"
+        android:backgroundTint="@color/background"
         android:text="@string/dialogo_sabio"
         android:textColor="@color/letras_color"
         app:layout_constraintEnd_toEndOf="parent"

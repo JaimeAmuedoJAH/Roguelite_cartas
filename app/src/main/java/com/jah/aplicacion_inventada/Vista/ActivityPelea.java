@@ -1,11 +1,9 @@
 package com.jah.aplicacion_inventada.Vista;
 
-import android.app.AlertDialog;
 import android.media.MediaPlayer;
-import android.media.SoundPool;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -15,14 +13,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.jah.aplicacion_inventada.Controlador.ControladorEnemigo;
 import com.jah.aplicacion_inventada.Controlador.ControladorPersonaje;
-import com.jah.aplicacion_inventada.Modelo.FamiliaCarta.Carta;
 import com.jah.aplicacion_inventada.R;
-
-import java.util.List;
 
 public class ActivityPelea extends AppCompatActivity {
 
     RecyclerView rvCartas;
+    static ImageView imgEnemigo;
     LinearLayoutManager disposicion;
     AdaptadorMazo adaptadorMazo;
     ProgressBar pbVidaPj, pbVidaPnj;
@@ -41,12 +37,11 @@ public class ActivityPelea extends AppCompatActivity {
     }
 
     private void finTurno() {
-        Log.i("daño", "fin de turno" + ControladorPersonaje.getPersonaje().getVida());
-        ControladorEnemigo.ataque(15, this);
+        ControladorEnemigo.ataque(6, this);
         pbVidaPj.setProgress(ControladorPersonaje.getPersonaje().getVida());
         pbVidaPnj.setProgress(ControladorEnemigo.getEnemigo().getVida());
         ControladorPersonaje.getPersonaje().setTurnos(ControladorPersonaje.getPersonaje().getTurnosTotales());
-        energia = ControladorPersonaje.getPersonaje().getTurnos() + "/" + ControladorPersonaje.getPersonaje().getTurnosTotales();;
+        energia = ControladorPersonaje.getPersonaje().getTurnos() + "/" + ControladorPersonaje.getPersonaje().getTurnosTotales();
         lblEnergia.setText(ActivityPelea.energia);
         ControladorPersonaje.getPersonaje().setDefensa(ControladorPersonaje.getPersonaje().getDefensa() * -1);
     }
@@ -57,8 +52,10 @@ public class ActivityPelea extends AppCompatActivity {
         pbVidaPnj = findViewById(R.id.pbVidaPnj);
         lblEnergia = findViewById(R.id.lblEnergia);
         btnFinTurno = findViewById(R.id.btnFinTurno);
+        imgEnemigo = findViewById(R.id.imgEnemigo);
         lblDanioRealizado = findViewById(R.id.lblDanioRealizado);
-        combate = 1;
+        combate = 0;
+        iniciarEnemigo();
         disposicion = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
         rvCartas.setLayoutManager(disposicion);
         adaptadorMazo = new AdaptadorMazo(ControladorPersonaje.getPersonaje().getMazo());
@@ -74,5 +71,17 @@ public class ActivityPelea extends AppCompatActivity {
         pbVidaPnj.setProgress(ControladorEnemigo.getEnemigo().getVida());
         energia = ControladorPersonaje.getPersonaje().getTurnos() + "/" + ControladorPersonaje.getPersonaje().getTurnosTotales();
         lblEnergia.setText(energia);
+    }
+
+    public static void iniciarEnemigo() {
+        if(combate == 0){
+            ControladorEnemigo.enemigo1();
+        }else if(combate == 1){
+            ControladorEnemigo.enemigo2();
+            imgEnemigo.setImageResource(R.drawable.enemigo2);
+        }else if(combate == 2){
+            ControladorEnemigo.enemigo3();
+            imgEnemigo.setImageResource(R.drawable.enemigo3);
+        }
     }
 }
