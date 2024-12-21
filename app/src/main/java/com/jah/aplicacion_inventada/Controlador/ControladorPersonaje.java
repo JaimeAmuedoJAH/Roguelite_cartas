@@ -2,8 +2,8 @@ package com.jah.aplicacion_inventada.Controlador;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Handler;
 
 import com.jah.aplicacion_inventada.Modelo.FamiliaCarta.Ataque;
 import com.jah.aplicacion_inventada.Modelo.FamiliaCarta.Carta;
@@ -11,11 +11,13 @@ import com.jah.aplicacion_inventada.Modelo.FamiliaCarta.Defensa;
 import com.jah.aplicacion_inventada.Modelo.FamiliaPersonaje.Enemigo;
 import com.jah.aplicacion_inventada.Modelo.FamiliaPersonaje.Personaje;
 import com.jah.aplicacion_inventada.R;
-import com.jah.aplicacion_inventada.Vista.ActivitySegundaPelea;
+import com.jah.aplicacion_inventada.Vista.ActivityPelea;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ControladorPersonaje implements Serializable {
 
@@ -49,6 +51,7 @@ public class ControladorPersonaje implements Serializable {
             enemigo.setVida(0);
             createDialogVictoria(context);
         }else{
+            ActivityPelea.lblDanioRealizado.setText(String.valueOf(ataque));
             enemigo.setVida(danio);
         }
     }
@@ -59,8 +62,7 @@ public class ControladorPersonaje implements Serializable {
                 .setTitle(R.string.dialog_victoria_title)
                 .setMessage(R.string.dialog_victoria_message)
                 .setPositiveButton(R.string.dialog_victoria_positive, (dialogInterface, i) -> {
-                    Intent segundaPelea = new Intent(context, ActivitySegundaPelea.class);
-                    context.startActivity(segundaPelea);
+
                 })
                 .create()
                 .show();
@@ -76,12 +78,8 @@ public class ControladorPersonaje implements Serializable {
             mazo.add(new Ataque("Ataque", "Realiza un barrido con la espada inflingiendo daño físico al enemigo", 1, R.drawable.ataque1, 6));
             mazo.add(new Ataque("Ataque", "Realiza un barrido con la espada inflingiendo daño físico al enemigo", 1, R.drawable.ataque1, 6));
             mazo.add(new Ataque("Ataque", "Realiza un barrido con la espada inflingiendo daño físico al enemigo", 1, R.drawable.ataque1, 6));
-            mazo.add(new Ataque("Ataque", "Realiza un barrido con la espada inflingiendo daño físico al enemigo", 1, R.drawable.ataque1, 6));
-            mazo.add(new Ataque("Ataque", "Realiza un barrido con la espada inflingiendo daño físico al enemigo", 1, R.drawable.ataque1, 6));
             mazo.add(new Ataque("Ataque en área", "Realiza una serie de golpes consecutivos haciendo daño a todos los enemigos de la sala", 1, R.drawable.ataque1, 4));
             mazo.add(new Ataque("Ataque+", "Realiza una estocada con la espada inflingiendo mayor cantidad de daño físico al enemigo que con un Ataque", 2, R.drawable.ataque2, 8));
-            mazo.add(new Defensa("Defensa", "Pone el escudo enfrente para bloquear el ataque del enemigo(Si el enemigo realiza un ataque+, seguirás recibiendo algo de daño)", 1, R.drawable.defensa1, 5));
-            mazo.add(new Defensa("Defensa", "Pone el escudo enfrente para bloquear el ataque del enemigo(Si el enemigo realiza un ataque+, seguirás recibiendo algo de daño)", 1, R.drawable.defensa1, 5));
             mazo.add(new Defensa("Defensa", "Pone el escudo enfrente para bloquear el ataque del enemigo(Si el enemigo realiza un ataque+, seguirás recibiendo algo de daño)", 1, R.drawable.defensa1, 5));
             mazo.add(new Defensa("Defensa", "Pone el escudo enfrente para bloquear el ataque del enemigo(Si el enemigo realiza un ataque+, seguirás recibiendo algo de daño)", 1, R.drawable.defensa1, 5));
             mazo.add(new Defensa("Defensa", "Pone el escudo enfrente para bloquear el ataque del enemigo(Si el enemigo realiza un ataque+, seguirás recibiendo algo de daño)", 1, R.drawable.defensa1, 5));

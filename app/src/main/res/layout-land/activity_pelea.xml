@@ -90,4 +90,13 @@
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/lblDanioRealizado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colordanio"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="458dp"
+        tools:layout_editor_absoluteY="258dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

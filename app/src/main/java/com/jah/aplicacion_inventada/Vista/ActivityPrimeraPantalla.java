@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,20 +37,22 @@ public class ActivityPrimeraPantalla extends AppCompatActivity {
             soundPool.play(sonidoCargado, 1, 1, 0, 0, 1);
             aumentarEstadistica(1);
         });
-        btnEleccion1.setOnClickListener(view -> {
+        btnEleccion2.setOnClickListener(view -> {
             soundPool.play(sonidoCargado, 1, 1, 0, 0, 1);
             aumentarEstadistica(2);
         });
-        btnEleccion1.setOnClickListener(view ->  {
+        btnEleccion3.setOnClickListener(view ->  {
             soundPool.play(sonidoCargado, 1, 1, 0, 0, 1);
             aumentarEstadistica(3);
         });
     }
 
     private void aumentarEstadistica(int seleccion) {
+        int vidaMax = ControladorPersonaje.getPersonaje().getVidaMaxima();
+        int vida = ControladorPersonaje.getPersonaje().getVida();
         if(seleccion == 1){
-            ControladorPersonaje.aumentarSaludMaxima(7);
-            ControladorPersonaje.aumentarVida(7);
+            ControladorPersonaje.aumentarSaludMaxima(vidaMax + 7);
+            ControladorPersonaje.aumentarVida(vida + 7);
         }else if(seleccion == 2){
             ControladorPersonaje.aumentarAtaque(1);
         }else{
@@ -74,5 +77,6 @@ public class ActivityPrimeraPantalla extends AppCompatActivity {
         mediaPlayer.start();
         soundPool = new SoundPool.Builder().build();
         sonidoCargado = soundPool.load(getApplicationContext(), R.raw.sonido_boton, 1);
+        Log.i("vida", "Vida incial " + ControladorPersonaje.getPersonaje().getVida() + " VidaMaxima " +ControladorPersonaje.getPersonaje().getVidaMaxima());
     }
 }

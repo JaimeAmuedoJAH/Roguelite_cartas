@@ -2,6 +2,7 @@ package com.jah.aplicacion_inventada.Vista;
 
 import android.content.Context;
 import android.media.SoundPool;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import com.jah.aplicacion_inventada.Controlador.ControladorEnemigo;
 import com.jah.aplicacion_inventada.Controlador.ControladorPersonaje;
 import com.jah.aplicacion_inventada.Modelo.FamiliaCarta.Ataque;
 import com.jah.aplicacion_inventada.Modelo.FamiliaCarta.Carta;
+import com.jah.aplicacion_inventada.Modelo.FamiliaCarta.Defensa;
 import com.jah.aplicacion_inventada.R;
 
 import java.util.List;
@@ -57,12 +59,19 @@ public class AdaptadorMazo extends RecyclerView.Adapter<AdaptadorMazo.HolderMazo
 
     private void jugarCarta(Carta carta) {
         soundPool.play(sonidoCargado, 1, 1, 0, 0, 1);
-        if(ControladorPersonaje.getPersonaje().getTurnos() > 0){
+        if(ControladorPersonaje.getPersonaje().getTurnos() > 0 && carta.getNombre().contains("Ata")){
             ControladorPersonaje.atacar((Ataque)carta, ControladorPersonaje.getPersonaje(), ControladorEnemigo.getEnemigo(), context);
+            ControladorPersonaje.getPersonaje().setTurnos(ControladorPersonaje.getPersonaje().getTurnos() - carta.getCoste());
+        }else if(ControladorPersonaje.getPersonaje().getTurnos() > 0 && carta.getNombre().contains("Def")){
+            ControladorPersonaje.getPersonaje().setDefensa(0);
+            Defensa defensa = (Defensa) carta;
+            ControladorPersonaje.aumentarDefensa(defensa.getDefensa());
             ControladorPersonaje.getPersonaje().setTurnos(ControladorPersonaje.getPersonaje().getTurnos() - carta.getCoste());
         }else{
             Toast.makeText(context, "No tienes energia suficiente", Toast.LENGTH_SHORT).show();
         }
+        ActivityPelea.energia = ControladorPersonaje.getPersonaje().getTurnos() + "/" + ControladorPersonaje.getPersonaje().getTurnosTotales();;
+        ActivityPelea.lblEnergia.setText(ActivityPelea.energia);
     }
 
     @Override
